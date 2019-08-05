@@ -17,4 +17,13 @@ steps:
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'C:\Users\HP\Documents\KeyStore.jks'
+    apksignerKeystorePassword: 'expo3030'
+    apksignerKeystoreAlias: 'MyAndroidKey'
+    apksignerKeyPassword: 'expo3030'
+    apksignerFile: 'C:\Users\HP\Documents'
+    zipalignFile: 'C:\Users\HP\Documents'
     tasks: 'assembleDebug'
